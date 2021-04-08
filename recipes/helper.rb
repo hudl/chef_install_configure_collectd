@@ -148,8 +148,6 @@ def get_debian_os_name
     return 'wheezy'
   elsif (node['platform_version'].start_with?('8'))
     return 'jessie'
-  elsif (node['platform_version'].start_with?('9'))
-    return 'stretch'
   else
     raise ("We do not support this system #{node['platform']}_#{node['platform_version']}")
   end
