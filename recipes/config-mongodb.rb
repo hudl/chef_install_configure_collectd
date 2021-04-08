@@ -10,9 +10,17 @@
 require File.expand_path("../helper.rb", __FILE__)
 
 include_recipe 'chef_install_configure_collectd::default'
-install_python_pip
 
-pip_python_module("pymongo", "3.0.3")
+package 'python27-pip' do
+  action :install
+end
+
+bash 'extract_module' do
+  code <<-EOH
+   pip-2.7 install pymongo==3.8.0
+  EOH
+  not_if 'pip-2.7 freeze|grep pymongo'
+end
 
 directory node['mongodb']['python_folder'] do
   action :create
