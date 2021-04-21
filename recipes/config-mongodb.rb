@@ -15,6 +15,12 @@ install_python_pip
 
 pip_python_module("pymongo", "3.0.3")
 
+bash 'extract_module' do
+  code <<-EOH
+   pip-2.7 install pymongo==3.8.0
+  EOH
+end
+
 directory node['mongodb']['python_folder'] do
   action :create
   recursive true
