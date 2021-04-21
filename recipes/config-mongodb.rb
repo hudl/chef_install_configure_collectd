@@ -13,11 +13,17 @@ include_recipe 'chef_install_configure_collectd::default'
 
 install_python_pip
 
-pip_python_module("pymongo", "3.0.3")
+remote_file '/tmp/pymongo-3.0.3.tar.gz' do
+  source 'https://files.pythonhosted.org/packages/bd/91/1857471b63eaa192127c985b29362c094ae925720d5571daf286222c9716/pymongo-3.0.3.tar.gz'
+  owner "root"
+  group "root"
+  mode '0755'
+  action :create
+end
 
 bash 'extract_module' do
   code <<-EOH
-   pip-2.7 install pymongo==3.8.0
+   pip-2.6 install /tmp/pymongo-3.0.3.tar.gz
   EOH
 end
 
