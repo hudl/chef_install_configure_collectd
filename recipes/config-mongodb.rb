@@ -13,6 +13,8 @@ include_recipe 'chef_install_configure_collectd::default'
 
 install_python_pip
 
+# Collectd uses packages in python2.6's path, however, we can't use pip2.6 to download packages from Pypi due to SNI requirements.
+# The workaround is to download pymongo package directly then have pip2.6 install it.
 remote_file '/tmp/pymongo-3.0.3.tar.gz' do
   source 'https://files.pythonhosted.org/packages/bd/91/1857471b63eaa192127c985b29362c094ae925720d5571daf286222c9716/pymongo-3.0.3.tar.gz'
   owner "root"
