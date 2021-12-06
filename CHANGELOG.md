@@ -1,3 +1,6 @@
+## v0.5.0
+* Point CollectD metrics at our OpenTelemetry Gateways
+
 ## v0.3.3
 * Adding support for Amazon Linux 2017.03 and all future versions
 
@@ -54,7 +57,7 @@
 ## v0.1.0:
 
 * Initial release.
-* Implement the basic 3 recipes to install collectd: 
+* Implement the basic 3 recipes to install collectd:
 - default recipe to install collectd-collectd
 - configure recipe to configure collectd
 - write-http recipe to configure the write-http plugin of collectd to send metrics to signalfx

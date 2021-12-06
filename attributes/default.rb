@@ -1,5 +1,19 @@
 default['write_http']['AWS_integration'] = true
-default['write_http']['Ingest_host'] = 'https://ingest.signalfx.com/v1/collectd'
+# We're trying to move away from being locked into the proprietary SignalFx metrics
+# product, and open up options to send our metrics anywhere.
+#
+# To do this we're running OpenTelemetry on Kubernetes that accepts CollectD
+# metrics and exports them to SignalFx, so in the future we could flip where they're
+# exported to.
+#
+# This also means that we only need to manage the SignalFx API key on the
+# Kubernetes deployment of OpenTelemetry rather than keep it up to date on
+# every server
+if node.chef_environment.downcase == "prod"
+  default['write_http']['Ingest_host'] = 'http://opentelemetry-collector.hudltools.com:8081'
+else
+  default['write_http']['Ingest_host'] = 'http://opentelemetry.app.thorhudl.com:8081'
+end
 default['write_http']['API_TOKEN'] = ''
 
 default['collectd_version'] = 'latest'
