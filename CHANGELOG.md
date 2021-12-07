@@ -1,3 +1,6 @@
+## v0.5.1
+* Adding missing / to end of IngestURL for CollectD
+
 ## v0.5.0
 * Point CollectD metrics at our OpenTelemetry Gateways
 

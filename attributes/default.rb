@@ -10,9 +10,9 @@ default['write_http']['AWS_integration'] = true
 # Kubernetes deployment of OpenTelemetry rather than keep it up to date on
 # every server
 if node.chef_environment.downcase == "prod"
-  default['write_http']['Ingest_host'] = 'http://opentelemetry-collector.app.hudl.com:8081'
+  default['write_http']['Ingest_host'] = 'http://opentelemetry-collector.app.hudl.com:8081/'
 else
-  default['write_http']['Ingest_host'] = 'http://opentelemetry-collector.app.thorhudl.com:8081'
+  default['write_http']['Ingest_host'] = 'http://opentelemetry-collector.app.thorhudl.com:8081/'
 end
 default['write_http']['API_TOKEN'] = ''
 
