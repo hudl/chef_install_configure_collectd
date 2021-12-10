@@ -1,3 +1,6 @@
+## v0.5.2
+* Ensure recipe can run on nodes that dont have a hudl attribute
+
 ## v0.5.1
 * Adding missing / to end of IngestURL for CollectD
 
