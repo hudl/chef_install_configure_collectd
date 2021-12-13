@@ -17,7 +17,7 @@ def get_collectd_conf_file
 end
 
 # required to work around issue with collectd logging on centos 7
-if node['platform'] == 'centos' and node['platform_version'].to_f >= 7.0 
+if node['platform'] == 'centos' and node['platform_version'].to_f >= 7.0
     node.override['SignalFx']['collectd']['logfile']['File'] =  "stdout"
 end
 
@@ -26,7 +26,7 @@ node.default['collectd_conf_folder'] = get_collectd_conf_folder
 node.default['collectd_managed_conf_folder'] = "#{node['collectd_conf_folder']}/managed_config"
 node.default['collectd_filtering_conf_folder'] = "#{node['collectd_conf_folder']}/filtering_config"
 
-if node[:hudl].fetch(:patch_signalfx_installation, false)
+if node.key?(:hudl) and node[:hudl].fetch(:patch_signalfx_installation, false)
   remote_file '/tmp/SignalFx-collectd-RPMs-AWS_EC2_Linux-release-latest.noarch.rpm' do
     source 'https://dl.signalfx.com/rpms/SignalFx-rpms/release/SignalFx-collectd-RPMs-AWS_EC2_Linux-release-latest.noarch.rpm'
     action :create
