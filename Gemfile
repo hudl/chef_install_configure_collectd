@@ -10,7 +10,7 @@ gem "chef-vault", "~> 2.6.1"
 
 
 gem "berkshelf", "~> 4.0.1"
-gem "foodcritic", "~> 11.3.0"
+gem "foodcritic", "~> 11.3.1"
 gem "rake"
 gem "rubocop", "~> 0.28.0"
 
