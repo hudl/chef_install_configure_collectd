@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "chef", "~> 12.5.1"
 gem "chef-config", "~> 12.5.1"
-gem "chef-zero", "~> 4.3.2"
+gem "chef-zero", "~> 4.4.0"
 gem "chefspec", "~> 4.4.0"
 gem "chef-dk"
 gem "cheffish", "~> 1.5.0"
