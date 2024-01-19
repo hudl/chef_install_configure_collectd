@@ -9,7 +9,7 @@ gem "cheffish", "~> 1.5.0"
 gem "chef-vault", "~> 2.6.1"
 
 
-gem "berkshelf", "~> 4.0.1"
+gem "berkshelf", "~> 4.2.3"
 gem "foodcritic", "~> 11.3.0"
 gem "rake"
 gem "rubocop", "~> 0.28.0"
