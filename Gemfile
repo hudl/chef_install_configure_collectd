@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "chef", "~> 12.5.1"
+gem "chef", "~> 15.4.45"
 gem "chef-config", "~> 12.5.1"
 gem "chef-zero", "~> 4.3.2"
 gem "chefspec", "~> 4.4.0"
