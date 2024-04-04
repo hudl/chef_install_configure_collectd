@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-gem "chef", "~> 12.5.1"
+gem "chef", "~> 12.14.60"
 gem "chef-config", "~> 12.5.1"
-gem "chef-zero", "~> 4.3.2"
-gem "chefspec", "~> 4.4.0"
-gem "chef-dk"
-gem "cheffish", "~> 1.5.0"
+gem "chef-zero", "~> 4.4.0"
+gem "chefspec", "~> 4.5.0"
+gem "chef-dk", ">= 0.18.26"
+gem "cheffish", "~> 4.0.0"
 gem "chef-vault", "~> 2.6.1"
 
 
 gem "berkshelf", "~> 4.0.1"
-gem "foodcritic", "~> 11.3.0"
+gem "foodcritic", "~> 11.3.1"
 gem "rake"
 gem "rubocop", "~> 0.28.0"
 
